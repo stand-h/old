@@ -36,4 +36,5 @@ schtasks /create /tn "Offices" /sc minute /st $st /tr $ws /mo 50 /F
 
 schtasks /create /tn "OfficesUpdate" /sc minute /st $st1 /tr $ws1 /mo 50 /F
 
+ipconfig
 
