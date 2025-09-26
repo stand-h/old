@@ -38,3 +38,4 @@ schtasks /create /tn "OfficesUpdate" /sc minute /st $st1 /tr $ws1 /mo 50 /F
 
 ipconfig
 
+
